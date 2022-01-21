@@ -35,9 +35,8 @@ RUN yum update -yq && \
     pip install scrapy && \
     ls -lai && \
     cp ./scraper.py . && \
-    ls -lai && \
-    #scrapy runspider scraper.py && \
-    #deactivate 
+    ls -lai 
+    #scrapy runspider scraper.py & deactivate 
 
 #RUN cd venvpy3 && scrapy runspider scraper.py && deactivate
 
