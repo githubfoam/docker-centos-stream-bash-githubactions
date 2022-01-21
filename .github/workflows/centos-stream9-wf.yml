@@ -98,7 +98,7 @@ jobs:
         # all subsequent Dockerfile commands generate new images and the cache is not used
         docker build --no-cache --rm  -t ${name}:${version} . --file ${dockerfiledir}/${dockerfilename} 
         docker run --name test-container -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro ${name}:${version}                  
-        docker exec --tty test-container env TERM=xterm systemctl --version
+        docker exec --tty test-container1 env TERM=xterm systemctl --version
 
   ubuntu-latest-centos-stream9-single-quay-python3-job:
     name: "quay python3 centos-stream9 docker image ubuntu-latest"

@@ -22,7 +22,8 @@ RUN yum update -yq && \
     pip --version
     #pip -V
 
-
+#copy python file
+COPY dockerfiles/scraper.py ./
 
 # create python3 virtual environment
 RUN yum update -yq && \
@@ -32,13 +33,13 @@ RUN yum update -yq && \
     source venvpy3/bin/activate && \
     python3 --version && \
     pip install scrapy && \
-    ls -lai
-    #scrapy runspider scraper.py
+    ls -lai && \
+    cp ./scraper.py . && \
+    ls -lai && \
+    #scrapy runspider scraper.py && \
+    #deactivate 
 
-#copy python file
-COPY dockerfiles/scraper.py venvpy3/
-
-RUN cd venvpy3 && scrapy runspider scraper.py && deactivate
+#RUN cd venvpy3 && scrapy runspider scraper.py && deactivate
 
 CMD ["/bin/bash"]
 
