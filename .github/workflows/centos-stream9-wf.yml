@@ -92,12 +92,14 @@ jobs:
         # all subsequent Dockerfile commands generate new images and the cache is not used
         docker build --no-cache --rm  -t ${name}:${version} . --file ${dockerfiledir}/${dockerfilename} 
         docker run --name test-container -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro ${name}:${version}
+        docker image ls
+        docker container ls
     - name: "Verify systemctl in the built image"
       run: |
         # destroyed afterwards (use --rm )
         # all subsequent Dockerfile commands generate new images and the cache is not used
         docker build --no-cache --rm  -t ${name}:${version} . --file ${dockerfiledir}/${dockerfilename}
-        docker run --name test-container -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro ${name}:${version}                  
+        docker run --name test-container1 -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro ${name}:${version}                  
         docker image ls
         docker container ls
         docker exec --tty test-container1 env TERM=xterm systemctl --version
