@@ -33,11 +33,13 @@ RUN yum update -yq && \
     source venvpy3/bin/activate && \
     python3 --version && \
     pip3 install scrapy && \
+    #https://github.com/trailofbits/pip-audit
+    #pip3 install pip-audit
     ls -lai && \
     cp ./scraper.py venvpy3/ && \
     ls -lai venvpy3 && \
     scrapy runspider scraper.py && \
-    3deactivate 
+    deactivate 
 
 #RUN cd venvpy3 && scrapy runspider scraper.py && deactivate
 
