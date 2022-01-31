@@ -1,2 +1,3 @@
 # docker-centos-stream-bash-githubactions
-centros stream
+[![quay centos stream8 CI workflow](https://github.com/githubfoam/docker-centos-stream-bash-githubactions/actions/workflows/quay-centos-stream8-wf.yml/badge.svg)](https://github.com/githubfoam/docker-centos-stream-bash-githubactions/actions/workflows/quay-centos-stream8-wf.yml)  
+[![quay centos stream9 CI workflow](https://github.com/githubfoam/docker-centos-stream-bash-githubactions/actions/workflows/quay-centos-stream9-wf.yml/badge.svg)](https://github.com/githubfoam/docker-centos-stream-bash-githubactions/actions/workflows/quay-centos-stream9-wf.yml)
