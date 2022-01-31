@@ -3,7 +3,7 @@ name: "quay centos stream8 CI workflow"
 
 on:
   push:
-    branches: [ test ]
+    branches: [ main ]
 
 
 jobs:
